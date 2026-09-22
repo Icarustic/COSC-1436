@@ -65,7 +65,7 @@ int main()
     {
         cout << "Tie";
     }
-    else if (User1Choice == "rock" and User2Choice == "scissors" or 
+    else if (User1Choice == "rock" and User2Choice == "scissors" or //Is there a way to make this more efficient?
              User1Choice == "rock" and User2Choice == "scissor" or 
              User1Choice == "scissor" and User2Choice == "paper" or 
              User1Choice == "paper" and User2Choice == "rock")

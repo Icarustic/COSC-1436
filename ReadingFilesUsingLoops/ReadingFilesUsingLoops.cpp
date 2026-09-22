@@ -21,7 +21,7 @@ int main()
     string line;
     int counter = 0;
 
-    ifstream fin("SandmanLyrics.txt"); //Debugging to ensure file is found
+    ifstream fin("EastSideLyrics.txt"); //Debugging to ensure file is found
     if (fin.is_open() == false) //if the file was not found or opened
     {
         cout << "File was not found\n";
@@ -38,8 +38,9 @@ int main()
         cout << line << endl;
         if (line == "") --i; //since the for loop has its own counter you subtract by one from it for every blank line so it is able to print 10 total actual lines
     }
-    cout << "10 Lines Printed\n";
-
+    cout << "10 Lines Printed, Press Enter to Continue\n";
+    system("pause");
+    system("cls");
     fin.clear(); //Reset Button
     fin.seekg(0); //Recalibrate to 0
     //string allline;
@@ -55,5 +56,5 @@ int main()
 
     // -- Print Line Count --
 
-    cout << "Total Lines: " << counter; // correctly prints total number of lines, in Sandman total is 30 - 5 = 25 to exclude blank lines
+    cout << "Total Lines: " << counter; // correctly prints total number of lines, in Sandman total is 35 - 5 = 30 to exclude blank lines
 }

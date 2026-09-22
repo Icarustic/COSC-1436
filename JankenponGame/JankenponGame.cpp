@@ -22,31 +22,40 @@ int main()
     //-------------User1-------------
     cout << "[Rock, Paper, Scissors]\n";
     string User1Choice;
-    cout << "User 1 Choice? \n";
-    ReadInLowerCase(User1Choice); //It correctly sets the string to the lowercase version meaning it works as a formatter.
-    cout << User1Choice << endl;
-    
+    while (true)
+    {
+        cout << "User 2: Pick A Option? \n";
+        ReadInLowerCase(User1Choice); //It correctly sets the string to the lowercase version meaning it works as a formatter.
+        if (User1Choice != "rock" and User1Choice != "paper" and User1Choice != "scissor" and User1Choice != "scissors") // and checks if multiple are true, or checks if any are true //This cannot use or since it contradicts itself if one is true, when the varaible is equal to rock it is not equal to paper or scissor making it false.
+        {
+            cout << "Invaid Choice Try Again: (Pick Rock, Paper, or Scissor)\n";
+        }
+        else
+        {
+            break;
+        }
+        //cout << "Debug" << User1Choice << endl;
+    }
     //-------------Clear-------------
     //system("pause"); //for debugging
-    system("cls");
+    system("cls"); //clears the console so the second user cant see the first users choice
 
     //-------------User2-------------
     cout << "[Rock, Paper, Scissors]\n";
     string User2Choice;
     while (true)
     {
-        cout << "User 2 Choice? \n";
+        cout << "User 2: Pick A Option \n";
         ReadInLowerCase(User2Choice);
-        if (User1Choice == "rock" or User1Choice == "paper" or User1Choice == "scissor" or User1Choice == "scissors")
+        if (User2Choice != "rock" and User2Choice != "paper" and User2Choice != "scissor" and User2Choice != "scissors")
         {
-            ;
+            cout << "Invaid Choice Try Again: (Pick Rock, Paper, or Scissor)\n";
         }
         else
         {
-           cout << "Invaid Answer: (Rock, Paper, or Scissor)";
+            break;
         }
-        
-        cout << User2Choice << endl;
+        //cout << "Debug" << User2Choice << endl;
     }
 
     //-------------Result-------------
@@ -56,11 +65,17 @@ int main()
     {
         cout << "Tie";
     }
-    else if (User1Choice == "rock" and User2Choice == "scissors" or User1Choice == "rock" and User2Choice == "scissor" or User1Choice == "scissors" or "scissor" and User2Choice == "paper" or User1Choice == "paper" and User2Choice == "rock")
+    else if (User1Choice == "rock" and User2Choice == "scissors" or 
+             User1Choice == "rock" and User2Choice == "scissor" or 
+             User1Choice == "scissor" and User2Choice == "paper" or 
+             User1Choice == "paper" and User2Choice == "rock")
     {
         cout << "User 1 Wins";
     }
-    else if (User2Choice == "rock" and User1Choice == "scissors" or User1Choice == "rock" and User2Choice == "scissor" or User2Choice == "scissors" or "scissor" and User1Choice == "paper" or User2Choice == "paper" and User1Choice == "rock")
+    else if (User2Choice == "rock" and User1Choice == "scissors" or
+             User2Choice == "rock" and User1Choice == "scissor" or
+             User2Choice == "scissor" and User1Choice == "paper" or
+             User2Choice == "paper" and User1Choice == "rock")
     {
         cout << "User 2 Wins";
     }

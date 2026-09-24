@@ -16,6 +16,7 @@ using namespace std;
 
 int main()
 {
+    
     SetConsoleOutputCP(CP_UTF8); //Neccesary to Allow the .txt to properly use and print commas and apostraphes. Otherwise the charecters become scrambled
 
     string line;

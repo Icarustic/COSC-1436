@@ -5,6 +5,7 @@
   </Configurations>
   <Folder Name="/Solution Items/" />
   <Project Path="August27/August27.vcxproj" Id="2b1b688d-9e35-4da7-8caa-034a67aee2bc" />
+  <Project Path="DiceRollingGame/DiceRollingGame.vcxproj" Id="1af633ca-6fc5-447a-9ed4-fadde35f6286" />
   <Project Path="High_LowGame/High_LowGame.vcxproj" Id="1d112e64-bd55-458d-95c4-289e84402544" />
   <Project Path="JankenponGame/JankenponGame.vcxproj" Id="427d42ae-1e1a-4604-8997-0b4c0496dc22" />
   <Project Path="ReadingFilesUsingLoops/ReadingFilesUsingLoops.vcxproj" Id="67cc01d0-f803-4a3e-bbbd-7e3baaefff18" />
@@ -14,4 +15,5 @@
   <Project Path="September11/September11.vcxproj" Id="18de2c28-cbb8-44ef-bf6c-27e730a90d9d" />
   <Project Path="September15/September15.vcxproj" Id="92907174-296e-4efe-9710-43fe6b157247" />
   <Project Path="September17/September17.vcxproj" Id="2056b45d-b3f2-41ae-b442-722456aca393" />
+  <Project Path="September29/September29.vcxproj" Id="7e018b0d-3b2e-41e6-9b02-556b58272d47" />
 </Solution>

@@ -21,7 +21,7 @@ int main()
     //    - Checks if they both are 1 (ending the loop), 
     //    - Else it adds to a counter (amount of loop). (Add varible to store number of loops)
     // 3. Once both dice roll 1 the loop ends and it prints the count for the amount of loop it took.
-    // 4. Resets Variables, then run the game repeateadly and average out total amount of attempts. (Add variables to hold the total loops and #attempts)
+    // 4. Reset variables, then run the game repeatedly and average out total amount of attempts. (Add variables to hold the total loops and #attempts)
 
     //---Variables---
     int Roll20Result = -1;

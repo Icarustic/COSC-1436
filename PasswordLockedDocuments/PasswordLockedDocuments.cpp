@@ -2,6 +2,9 @@
 //
 
 #include <iostream>
+#include <filesystem> //needed to check folders since ifstream cannot check folders.
+
+#include "DocFunctions.h"
 
 using namespace std;
 
@@ -13,9 +16,55 @@ int main()
     // 3. Else if user login (password) is incorrect 3 times, end the program.
     // 4. Prompt for the password to unlock the selected document (password)
     // 5. If the password is correct, display the document content;
-    // 6. Else if the password is incorrect 3 times, end the program.
+    //   ^ Document Folder: Mp4, Vedio, Txt, PDF, Png.
+    // 6. Else if the password is incorrect, either ask for user login again or inform that they must wait before trying again.
 
-    //------Variables------
+    //------Functions------
+    // 1. Function: UserLogin - Bool
+    // 2. Function: DisplayDocuments - Vector <string> //How would I list the names of each files? / I could do it manually but that wouldnt be effecient / I was thinking to use a vector to store each file name but im not sure how you can append each item and keep it updated.
+    // 3. Function: SelectADocument
+    // 4. Function: DocumentLogin
+
+    //------Variables------  (Include V infront of all variables for easier reading)
+
+    //auto variable = 123; // auto -> automaticly specifies the data type of the variable based on the value assigned to it. (int in this case)
+
+    //auto currentPath = filesystem::current_path(); //:: means scope resolution operator 
+
+    //cout << currentPath << endl;
+
+    //auto VDirectoryIterator = filesystem::current_path();
+
+    //for (auto Vthing : VDirectoryIterator)
+    //{
+    //    cout << Vthing.filename() << endl;
+    //}
+
+
+    //filesystem::path VCurrentProjectPath = filesystem::current_path(); 
+
+    //filesystem::path VDocumentFolderPath = VCurrentProjectPath / "Documents";
+
+    ////cout << "Listing files inside: " << DocumentFolderPath << endl; //Lists the path, a path is a list of directories, inside each directory is files.
+
+  
+
+
+    ////auto directoryIterator = filesystem::directory_iterator(currentPath); //This is a list of all the files in the current directory.
+
+    //for (const auto& Ventry : filesystem::directory_iterator(VDocumentFolderPath)) // entry (temp variable, same as thing), auto& (determines the file type and & helps the computer quickly check the file), const (constant makes it so the values arent changed: It is EXTRA but just protects it from being changed)
+    //{
+    //    cout << Ventry.path().filename().string() << endl; //.filename only works on .path formats so you have to translate the fraction of the directory you got into a path to use the function on it. // .filename writes the name of the file // .string just removes the qoutes around the result to make it just text
+    //} //This does list the files like how I wanted, do I need to assign its results into a vector?
+
+
+
+    DisplayDocuments(); //Does work stand alone
+    //vector <string> list = DisplayDocuments();
+    //for (int index = 0; index < list.size(); index++)
+    //{
+    //    cout << list[index];
+    //}
 
 
  

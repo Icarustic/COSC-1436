@@ -52,6 +52,13 @@ void demoASimpleArray()
        "bread"
     };
 
+    //------Additional Functions Learned October06------
+    //groceryList.pop_back(); //this removes last element from the list
+    //groceryList.erase(groceryList.begin() + 1); //This allows you to remove an item from the list at a specific location, reqiures this formating.
+    //// groceryList.erase(groceryList.begin() // Starts at the first element of the array which is similar to saying .begin() + 0 (this + N is used since .begin() dosent accept values inside its parenthesis)
+    //// groceryList.erase(groceryList.end() - 1); //Works similarly to the .begin() function, but starts at the end of the list and works backwards.
+    //cout << *groceryList.begin() << endl; // * means Dereferencering, originally the .begin function returns a pointer (a memory adress) of the the first element this function just helps translate it back into its readable form.
+
     groceryList.push_back("tomato"); //inserts an item at the end of the list
     groceryList.push_back("fig");
 

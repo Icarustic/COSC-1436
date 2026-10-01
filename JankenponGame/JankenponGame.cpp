@@ -24,7 +24,7 @@ int main()
     string User1Choice;
     while (true)
     {
-        cout << "User 2: Pick A Option? \n";
+        cout << "User 2: Pick An Option? \n"; //Corrected "Pick A Option" to "Pick An Option"
         ReadInLowerCase(User1Choice); //It correctly sets the string to the lowercase version meaning it works as a formatter.
         if (User1Choice != "rock" and User1Choice != "paper" and User1Choice != "scissor" and User1Choice != "scissors") // and checks if multiple are true, or checks if any are true //This cannot use or since it contradicts itself if one is true, when the varaible is equal to rock it is not equal to paper or scissor making it false.
         {
@@ -45,7 +45,7 @@ int main()
     string User2Choice;
     while (true)
     {
-        cout << "User 2: Pick A Option \n";
+        cout << "User 2: Pick An Option \n"; //Corrected "Pick A Option" to "Pick An Option"
         ReadInLowerCase(User2Choice);
         if (User2Choice != "rock" and User2Choice != "paper" and User2Choice != "scissor" and User2Choice != "scissors")
         {

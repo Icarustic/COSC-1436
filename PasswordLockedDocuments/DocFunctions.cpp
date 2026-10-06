@@ -7,7 +7,13 @@ using namespace std;
 
 bool UserLogin()
 {
-    return 0;
+    string Username;
+    string Password;
+
+    cout << "Enter your Username";
+    cin >> Username;
+    cout << "Enter your Password";
+    cin >> Password;
 }
 
 vector <string> DisplayDocuments()
@@ -34,7 +40,7 @@ vector <string> DisplayDocuments()
 
 void SelectDocument()
 {
-    vector <string> VCurrentDocumentList = DisplayDocuments();
+    //vector <string> VCurrentDocumentList = DisplayDocuments();
     string Vfilename;
     int Attempt = 3;
 

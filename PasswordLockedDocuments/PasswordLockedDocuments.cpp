@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-    ////confirming if files could be found, does not work for those inside folders path needs to be included
+    ////-Confirming if files could be found, does not work for those inside folders, path needs to be included-
     //ifstream fin("TestFile.txt"); //The problem was that I had named the file File3.txt and not just File3
     //    if (fin.is_open() == false) //if the file was not found or opened
     //    {
@@ -30,10 +30,10 @@ int main()
     // 6. Else if the password is incorrect, either ask for user login again or inform that they must wait before trying again.
 
     //------Functions------
-    // 1. ☐ Function: UserLogin - Bool
+    // 1. ☐ Function: UserLogin - Bool // Create a Username and Password
     // 2. ☑  Function: DisplayDocuments - Vector <string> //How would I list the names of each files? / I could do it manually but that wouldnt be effecient / I was thinking to use a vector to store each file name but im not sure how you can append each item and keep it updated.
     // 3. ☑  Function: SelectADocument 
-    // 4. ☐ Function: DocumentLogin - Bool //Where would I store the passwords for each document, becuase im not sure if .mp4 files can contain that information? Do I just ask for the user login password again?
+    // 4. ☐ Function: DocumentLogin - Bool // Asks for the User Password again (//Where would I store the passwords for each document, becuase im not sure if .mp4 files can contain that information? Do I just ask for the user login password again?)
 
     //------Variables------  (Include V infront of all variables for easier reading)
 

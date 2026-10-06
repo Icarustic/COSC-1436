@@ -1,0 +1,1 @@
+To check if ifstream can look inside folder files

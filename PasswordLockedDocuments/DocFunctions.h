@@ -10,3 +10,4 @@ bool UserLogin(string password);
 
 vector <string> DisplayDocuments();
 
+void SelectDocument();

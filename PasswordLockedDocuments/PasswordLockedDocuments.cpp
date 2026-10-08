@@ -4,8 +4,10 @@
 #include <iostream>
 #include <filesystem> //needed to check folders since ifstream cannot check folders.
 #include <fstream>
+#include <Windows.h>
 
 #include "DocFunctions.h"
+
 
 using namespace std;
 
@@ -20,22 +22,24 @@ int main()
     //    }
     //cout << "File was found\n";
 
-    //------BluePrint------
-    // 1. Prompt for user login (password)
-    // 2. If correct display a list of documents, and ask the user to select one
-    // 3. Else if user login (password) is incorrect 3 times, end the program.
-    // 4. Prompt for the password to unlock the selected document (password)
-    // 5. If the password is correct, display the document content;
-    //   ^ Document Folder: Mp4, Vedio, Txt, PDF, Png.
-    // 6. Else if the password is incorrect, either ask for user login again or inform that they must wait before trying again.
+    /*
+    ------BluePrint------
+     1. Prompt for user login (password)
+     2. If correct display a list of documents, and ask the user to select one
+     3. Else if user login (password) is incorrect 3 times, end the program.
+     4. Prompt for the password to unlock the selected document (password)
+     5. If the password is correct, display the document content;
+       ^ Document Folder: Mp4, Vedio, Txt, PDF, Png.
+     6. Else if the password is incorrect, either ask for user login again or inform that they must wait before trying again.
 
-    //------Functions------
-    // 1. ☐ Function: UserLogin - Bool // Create a Username and Password
-    // 2. ☑  Function: DisplayDocuments - Vector <string> //How would I list the names of each files? / I could do it manually but that wouldnt be effecient / I was thinking to use a vector to store each file name but im not sure how you can append each item and keep it updated.
-    // 3. ☑  Function: SelectADocument 
-    // 4. ☐ Function: DocumentLogin - Bool // Asks for the User Password again (//Where would I store the passwords for each document, becuase im not sure if .mp4 files can contain that information? Do I just ask for the user login password again?)
+    ------Functions------
+     1. ☐ Function: UserLogin - Bool // Create a Username and Password
+     2. ☑  Function: DisplayDocuments - Vector <string> //How would I list the names of each files? / I could do it manually but that wouldnt be effecient / I was thinking to use a vector to store each file name but im not sure how you can append each item and keep it updated.
+     3. ☑  Function: SelectADocument 
+     4. ☐ Function: DocumentLogin - Bool // Asks for the User Password again (//Where would I store the passwords for each document, becuase im not sure if .mp4 files can contain that information? Do I just ask for the user login password again?)
 
-    //------Variables------  (Include V infront of all variables for easier reading)
+    ------Variables------  (Include V infront of all variables for easier reading)
+    */
 
     //auto variable = 123; // auto -> automaticly specifies the data type of the variable based on the value assigned to it. (int in this case)
 
@@ -68,15 +72,45 @@ int main()
     //} //This does list the files like how I wanted, do I need to assign its results into a vector?
 
     
+    vector <string> VCurrentLoginCredentials = UserLogin();
 
-    vector <string> VCurrentDocumentList = DisplayDocuments();  //Can work stand alone but changed to work more like a definition.
-
-    for (int index = 0; index < VCurrentDocumentList.size(); index++)
+    /*
+    for (int index = 0; index < VCurrentLoginCredentials.size(); index++)
     {
-        cout << VCurrentDocumentList[index] << endl;
-    }//Lists the available documents
+        cout << VCurrentLoginCredentials[index] << endl;
+    } 
+    */
+    int Attempts = 0;
+    bool DocumentOpened = true;
+    while (DocumentOpened)
+    {
+        system("cls");
+        vector <string> VCurrentDocumentList = DisplayDocuments();  //Can work stand alone but changed to work more like a definition.
 
-    SelectDocument();
+        cout << "------Document Index------\n";
+        cout << Attempts << endl;
+
+        for (int index = 0; index < VCurrentDocumentList.size(); index++)
+        {
+            cout << VCurrentDocumentList[index] << endl;
+        }//Lists the available documents
+
+        string SelectedDocument = SelectDocument();
+
+        cout << SelectedDocument;
+
+        system("cls");
+
+        DocumentOpened = DocumentLogin(VCurrentLoginCredentials, SelectedDocument);
+
+        Attempts++;
+        if (Attempts > 3)
+        {
+            break;
+        }
+    }
+    system("cls");
+    cout << "Guessed Incorrectly too many times ending program";
       
 
  

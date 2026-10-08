@@ -6,12 +6,12 @@
 
 using namespace std;
 
-bool UserLogin(string password);
+vector <string> UserLogin();
 
 vector <string> DisplayDocuments();
 
-void SelectDocument();
+string SelectDocument();
 
-bool DocumentLogin(string password);
+bool DocumentLogin(vector <string> CurrentLoginCredentials, string SelectedDocument);
 
 void ReadInLowerCase(string& input);

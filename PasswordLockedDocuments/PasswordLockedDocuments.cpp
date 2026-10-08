@@ -88,7 +88,7 @@ int main()
         vector <string> VCurrentDocumentList = DisplayDocuments();  //Can work stand alone but changed to work more like a definition.
 
         cout << "------Document Index------\n";
-        cout << Attempts << endl;
+        cout << "You have " << 3 - Attempts << " Attempts left." << endl;
 
         for (int index = 0; index < VCurrentDocumentList.size(); index++)
         {
@@ -104,14 +104,16 @@ int main()
         DocumentOpened = DocumentLogin(VCurrentLoginCredentials, SelectedDocument);
 
         Attempts++;
-        if (Attempts > 3)
+        if (Attempts >= 3)
         {
+            system("cls");
+            cout << "Guessed Incorrectly too many times ending program";
             break;
         }
+        else 
+        {
+            system("cls");
+        }
     }
-    system("cls");
-    cout << "Guessed Incorrectly too many times ending program";
-      
-
  
 }

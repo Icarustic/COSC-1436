@@ -29,7 +29,10 @@ vector <string> UserLogin()
         {
             break;
         }
-        else;
+        else
+        {
+            system("cls");
+        }
     }
     vector <string> VLoginCredentials =
     {
@@ -40,7 +43,7 @@ vector <string> UserLogin()
     return VLoginCredentials;
 }
 
-vector <string> DisplayDocuments()
+vector <string> DisplayDocuments() // I wonder if there is a way to organize the displayed documents so they are ordered according to the type of file they are, also I want to make it so the name of each file dosent have to case sensitive so you dont have to copy it 1:1 as closely when trying to open it.
 {
     filesystem::path VCurrentProjectPath = filesystem::current_path();
 
@@ -70,8 +73,10 @@ string SelectDocument()
     while (true)
     {
         cout << "Select the Document you want to unlock (Include .txt, .mp4, ...)\n";
+        
+        //cin.ignore();
 
-        cin >> Vfilename;
+        getline(cin, Vfilename);
 
         filesystem::path VFilePath = filesystem::current_path() / "Documents" / (Vfilename);
         ifstream fin(VFilePath);
@@ -106,7 +111,7 @@ bool DocumentLogin(vector <string> CurrentLoginCredentials, string SelectedDocum
     //int Attempts = 0;
     //if (Attempts <= 3)
     //{
-        cout << "Input your password to open this document\n";
+    cout << CurrentLoginCredentials[0] << " Input your password to open this document\n";
         cin >> password;
         if (password == CurrentLoginCredentials[1])
         {

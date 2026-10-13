@@ -106,3 +106,14 @@ int main()
 
 }
 
+/*
+Components: NameList vector, LenghtRanking vector, FindLongestName function.
+You can solve the issue of having multiple names with the longest lenght by 
+using a vector to store a list of names in first place, called LenghtRanking. 
+You append names to the LenghtRanking vector by running the FindLongestName function and taking 
+its result and adding it to the LenghtRanking vector while simultanously removing the appended name from NameList vector 
+so you can run the function again and check if the next longest name is as long as the name
+in the LenghtRanking vector, if it is then you append it to the vector and repeat the procces and check again, else you end the program.
+*/
+
+

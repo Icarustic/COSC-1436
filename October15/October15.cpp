@@ -29,7 +29,11 @@ int main()
     std::cout << std::fixed << std::setprecision(2); //Display fixed number of digits, in this case is 2 decimal places for cents
     std::cout << "The cost of a full tank of gass is " << Full_Tank_Cost << std::endl;
 
-    const float Miles_Per_Gallon = 25; //20-30 miles per gallon, Fuel effeciency, make the variable a float if you want to prompt for MPG (for their car) from the user
+    float Miles_Per_Gallon = 0.0f; //20-30 miles per gallon, Fuel effeciency, make the variable a float if you want to prompt for MPG (for their car) from the user
+
+    std::cout << "How many miles per gallon can your vehicle travel?\n";
+    std::cin >> Miles_Per_Gallon;
+
 
     int Miles_Per_Tank = Tank_Capacity * Miles_Per_Gallon;
 

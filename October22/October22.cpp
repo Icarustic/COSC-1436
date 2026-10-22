@@ -87,6 +87,14 @@ int Calculate_Age(int BirthMonth, int BirthDay, int BirthYear, bool BirthLeap, i
     //int AgeMonth = (12 - Month) + (BirthMonth - 12);
     int AgeMonth = (BirthMonth - Month + 12) % 12;  //Bm = 6, M = 6; 6-6 = 0 + 12 % 12 = 0 so it correctly calculates the months while accounting for wrap around, the logic however is lost on me.
     std::cout << "Years" << AgeYear << "Months" << AgeMonth;
+    if (Day - BirthDay < 0 )
+    {
+        int AgeDay = (Day - BirthDay) + DaysPerMonth[Month - 1] 
+    }
+    else
+    {
+        int AgeDay = (Day - BirthDay);
+    }
     return 0;
 }
 
@@ -94,7 +102,10 @@ int main()
 {
     /*------InClass Lab 11-------*/
     std::cout << "What is the current date? (Integers) (Month, Day, Year)\n";
-    std::cin >> Month >> Day >> Year;
+    //std::cin >> Month >> Day >> Year;
+    Month = 10;
+    Day = 22;
+    Year = 2026;
     //std::cout << Month << std::endl << Day << std::endl << Year << std::endl; //Works
 
     std::cout << "Is it a leap year?(Yes/No)\n"; //If current year is leap your count feburary as +1 days during calculations

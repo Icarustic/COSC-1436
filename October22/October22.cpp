@@ -85,16 +85,18 @@ int Calculate_Age(int BirthMonth, int BirthDay, int BirthYear, bool BirthLeap, i
 {
     int AgeYear = Year - BirthYear;
     //int AgeMonth = (12 - Month) + (BirthMonth - 12);
+    // May(5) - October(10) + 12 = 7 % 12. //The % dosent seem to be working
     int AgeMonth = (BirthMonth - Month + 12) % 12;  //Bm = 6, M = 6; 6-6 = 0 + 12 % 12 = 0 so it correctly calculates the months while accounting for wrap around, the logic however is lost on me.
-    std::cout << "Years" << AgeYear << "Months" << AgeMonth;
+    int AgeDay;
     if (Day - BirthDay < 0 )
     {
-        int AgeDay = (Day - BirthDay) + DaysPerMonth[Month - 1] 
+        AgeDay = (Day - BirthDay) + DaysperMonths[Month - 1]; //Does subtracting from the previous month mean to reduce the month count by one aswell?
     }
     else
     {
-        int AgeDay = (Day - BirthDay);
+        AgeDay = (Day - BirthDay);
     }
+    std::cout << "Years" << AgeYear << "Months" << AgeMonth << "Days" << AgeDay;
     return 0;
 }
 

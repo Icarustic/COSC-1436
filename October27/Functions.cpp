@@ -10,7 +10,7 @@ bool isPalindrome(string Word)
     {
 
     };
-    for (int i = 0; i < palindrome.size(); i++) //note: its > not >= due to working with vectors
+    for (int i = 0; i < palindrome.size(); i++) //note: its < not <= due to size counting charecters and vectors start at 0
     {
         DeconstructedWord.push_back(palindrome[i]); //Interesting by default strings are treated as a vector of charecters.
         cout << palindrome[i];

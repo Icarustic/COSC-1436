@@ -18,7 +18,7 @@ void Display_ToDoList(vector <string> ToDoList)
         cout << ToDoList[i];
     }
 }
-void AddItem_ToDoList(vector <string> ToDoList)
+void AddItem_ToDoList(vector <string> &ToDoList) //adding ampersand will allow it alter the vector instead of onlyt editing the vector it clones.
 {
     cin.ignore();
     cout << "Enter a task into the ToDoList:\n";
@@ -43,7 +43,7 @@ void AddItem_ToDoList(vector <string> ToDoList)
         }
     }
 }
-void RemoveItem_ToDoList(vector <string> ToDoList)
+void RemoveItem_ToDoList(vector <string> &ToDoList)
 {
     int Pos = 1;
     while (true)
@@ -70,7 +70,7 @@ int main()
 
     vector <string> ToDoList =
     {
-        "test", "test2",
+       
     };
     //ToDoList.resize(ToDoList.size() + 5); //always gaurantee that there are 5 empty spaces to insert items into can be adjusted to how ever many existing spaces are needed ahead of time.
 

@@ -3,9 +3,17 @@
 #include <string>
 #include <vector>
 
+
+/*
+* @brief asdfasdfasdf <br>
+* 1234455
+* @param
+* @return nothing
+*/
 bool isPalindrome(string Word)
 {
     string palindrome = Word;//Palindrome example
+    //jhgfhgfgfg
     vector <char> DeconstructedWord =
     {
 

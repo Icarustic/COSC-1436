@@ -89,6 +89,21 @@ int CalculateMaxSale(std::vector <std::vector <int>> salesData)
     return CurrentMax;
 }
 
+int CalculateMaxMonthSale(std::vector <std::vector <int>> salesData, int Month)
+{
+    double CurrentMax = 0;
+    for (int row = 0; row < salesData.size(); row++)
+    {
+        
+            if (CurrentMax < salesData[row][Month])
+            {
+                CurrentMax = salesData[row][Month];
+            }
+    }
+    //std::cout << "Current Max " << CurrentMax;
+    return CurrentMax;
+}
+
 int CalculateMonthAverageSales(std::vector <std::vector <int>> salesData, int Month) //Specify the Column
 {
     double MonthTotal = 0;
@@ -170,25 +185,33 @@ int main()
         {10,  11,   12} 
     };
 
+    int Month;
+    int Person;
+
     //Can we write a function to determine average sales per month.
     double AverageSales = CalculateAverageSales(salesData);
     std::cout << "AverageSales: " << AverageSales << std::endl;
 
-    //Calculate Max Sale Value
+    //Calculate Max Sale Total
     double MaxSale = CalculateMaxSale(salesData);
     std::cout << "MaxSale: " << MaxSale << std::endl;
 
+    //Calculate Max Sale of a Month
+    std::cout << "Choose a Month (Max) (Enter a number)\n";
+    std::cin >> Month;
+    Month--; //subtract by 1 to account for array starting at 0 not 1
+    double MonthMaxSale = CalculateMaxMonthSale(salesData, Month);
+    std::cout << "MaxSaleofTheMonth: " << MonthMaxSale << std::endl;
+
     //Calculate Average Sales Per Month/Column
-    std::cout << "Choose a Month (Enter a number)\n";
-    int Month;
+    std::cout << "Choose a Month (Avg) (Enter a number)\n";
     std::cin >> Month;
     Month--; //subtract by 1 to account for array starting at 0 not 1
     double MonthAverageSales = CalculateMonthAverageSales(salesData, Month);
     std::cout << "MonthAverageSales: " << MonthAverageSales << std::endl;
 
     //Calculate Average Sales Per Person/Row
-    std::cout << "Choose a Person (Enter a number)\n"; //make a map to assign a person to a number value
-    int Person;
+    std::cout << "Choose a Person (Avg) (Enter a number)\n"; //make a map to assign a person to a number value
     std::cin >> Person;
     Person--;
     double PersonAverageSales = CalculatePersonAverageSales(salesData, Person);

@@ -3,7 +3,7 @@
 
 #include <iomanip> //for setwidth (setw())
 #include <iostream>
-#include<map> 
+#include <map> 
 #include <string>
 #include <vector>
 
@@ -133,22 +133,24 @@ struct SalesRecord
 {
     std::string name; 
     std::string month; //row = -1;
-    float sales = - 1.0f; //If the structure setups the data types available in the vector how does initilizing affect the vector?
+    double sales; //If the structure setups the data types available in the vector how does initilizing affect the vector? //Seems to be used for salesRecord.name so it has an output/value
 };
 
 int main()
 {
-    std::string a; 
+    
+    //The implementation neccesary to use a struct
+    SalesRecord salesRecord; //"instantation" of an objec
+    std::cout << salesRecord.name; //I see you specify what data type only , lacks a position since a struct does not list just define the list.
 
-    SalesRecord salesRecord; //"instantation" of an object
-    //std::cout << salesRecord[]
-    std::vector<SalesRecord> sales =
+    //Use the struct in a vector to make a list
+    std::vector <SalesRecord> sales = 
     {
         {"Alice", "February", 99.99},
         {"Bob", "March", 123.45}
     };
 
-    //std::cout << sales[0] << std::endl; 
+    std::cout << sales[0].name << std::endl; // Here is where you specify position, then specify the data type 
 
 
 

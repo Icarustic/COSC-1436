@@ -56,9 +56,9 @@ int main()
 
     std::vector <std::vector <char>> Grid = 
     {
-        {' ',' ',' '},
-        {' ',' ',' '},
-        {' ',' ',' '}
+        {' ','x',' '},
+        {' ','x',' '},
+        {' ','x',' '}
     };
     while (true)
     {

@@ -10,18 +10,18 @@
 bool Player = false; //false = player x, true = player o
 
 
-void PickASquare(std::vector <std::vector <std::string>> A2DArray)
-{
-    std::cout << "Select a row and column\n" << Player << std::endl;
-    std::cout << "Column/X: ";
-    int ChoiceColumn;
-    std::cin >> ChoiceColumn;
-
-    std::cout << "Row/Y: ";
-    int ChoiceRow;
-    std::cin >> ChoiceRow;
-  
-}
+//void PickASquare(std::vector <std::vector <std::string>> A2DArray)
+//{
+//    std::cout << "Select a row and column\n" << Player << std::endl;
+//    std::cout << "Column/X: ";
+//    int ChoiceColumn;
+//    std::cin >> ChoiceColumn;
+//
+//    std::cout << "Row/Y: ";
+//    int ChoiceRow;
+//    std::cin >> ChoiceRow;
+//  
+//}
 
 int main()
 {
@@ -56,16 +56,28 @@ int main()
 
     std::vector <std::vector <char>> Grid = 
     {
-        {' ','x',' '},
-        {' ','x',' '},
-        {' ','x',' '}
+        {' ',' ',' '},
+        {' ',' ',' '},
+        {' ',' ',' '}
     };
+
+    //std::vector <std::vector <char>> Grid2(3, std::vector<char> (3, ' ')); 
+    //version for char uses '' instead of ""
+    //First Value is the number of rows, Second value is the number of columns
+    int MoveCOunter = 0;
+
     while (true)
     {
+        //if (MoveCOunter >= 5) //only starts checking once one charecter has played 3 charecters , so after 5 moves, since the first player will always have one more move than the second player.
+        //{
+        //    CheckWin(Grid);
+        //}
         Print2DArray(Grid, Player);
         PickASquare(Grid, Player); //Currently they pick a row and column but alphabets can also be used as placeholders for the grid.
+        MoveCOunter++;
         CheckWin(Grid);
         system("pause");
+        system("cls");
     }
 }
 

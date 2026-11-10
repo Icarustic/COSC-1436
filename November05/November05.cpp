@@ -79,6 +79,9 @@ int main()
         system("pause");
         system("cls");
     }
+
+        /* To Implement a decaying last move, append all changes into a temporary vector with a specific size (3), that vector acts as a log of the players moves and can be used to find the oldest move and remove it from the grid.*/
+
 }
 
 

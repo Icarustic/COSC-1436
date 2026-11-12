@@ -68,14 +68,14 @@ int main()
 
     while (true)
     {
-        //if (MoveCOunter >= 5) //only starts checking once one charecter has played 3 charecters , so after 5 moves, since the first player will always have one more move than the second player.
-        //{
-        //    CheckWin(Grid);
-        //}
+        if (MoveCOunter >= 5) //only starts checking once one charecter has played 3 charecters , so after 5 moves, since the first player will always have one more move than the second player.
+        {
+            CheckWin(Grid);
+        }
         Print2DArray(Grid, Player);
         PickASquare(Grid, Player); //Currently they pick a row and column but alphabets can also be used as placeholders for the grid.
         MoveCOunter++;
-        CheckWin(Grid);
+        //CheckWin(Grid);
         system("pause");
         system("cls");
     }

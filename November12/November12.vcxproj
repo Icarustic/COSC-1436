@@ -139,7 +139,11 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Hangman.cpp" />
     <ClCompile Include="November12.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Hangman.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

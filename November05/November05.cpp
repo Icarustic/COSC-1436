@@ -56,9 +56,10 @@ int main()
 
     std::vector <std::vector <char>> Grid = 
     {
-        {' ',' ',' '},
-        {' ',' ',' '},
-        {' ',' ',' '}
+        {' ','x',' ',' '},
+        {'x','x','x',' '},
+        {' ','x',' ',' '},
+        {' ',' ',' ',' '}
     };
 
     //std::vector <std::vector <char>> Grid2(3, std::vector<char> (3, ' ')); 
@@ -75,7 +76,7 @@ int main()
         Print2DArray(Grid, Player);
         PickASquare(Grid, Player); //Currently they pick a row and column but alphabets can also be used as placeholders for the grid.
         MoveCOunter++;
-        //CheckWin(Grid);
+        CheckWin(Grid);
         system("pause");
         system("cls");
     }

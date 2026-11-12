@@ -97,7 +97,7 @@ void CheckWin(const std::vector<std::vector<char>> &A2DArray)
     //2D Grid Range;
     int min = 0;
     int max = A2DArray.size() - 1; //since the array begins at 0, the max is the size of the array -1, so max of 2 is 3x3
-    int combination = 3; //How many in a row to win
+    int combination = 4; //How many in a row to win
     
     //bool inARow('1', '2', )
 
@@ -109,10 +109,8 @@ void CheckWin(const std::vector<std::vector<char>> &A2DArray)
         {
             if (A2DArray[row][column] == 'x')
             {
-                /* I would have to replace all of the second if statments that check one space over with for loops,
-                so they can increment, so it is possible to check for more than 2 rows over of the same charecter.*/
 
-                //up
+                //up and down
                 for (int i = 1; i <= combination; i++)
                 {
                     if (row - i >= min && row - i <= max)
@@ -121,7 +119,7 @@ void CheckWin(const std::vector<std::vector<char>> &A2DArray)
                         {
                             if (i == combination - 1)
                             {
-                                std::cout << "Player x wins!" << std::endl;
+                                std::cout << "Player x WinsVertical!" << std::endl;
                             }
                             
                         }
@@ -131,72 +129,29 @@ void CheckWin(const std::vector<std::vector<char>> &A2DArray)
                         }
                     }
                     // Make a functions that intakes direction, min and max, and combo to reduce the size of this.
-                    CheckPath("up", max, combination, A2DArray);
+                    //CheckPath("up", max, combination, A2DArray);
                 }
 
-
-                //up
-                if (row - 1 >= min and A2DArray[row - 1][column] == 'x')
+                //left and right
+                for (int i = 1; i <= combination; i++)
                 {
-                    if (row - 2 >= min and A2DArray[row - 2][column] == 'x')
+                    if (column - i >= min && column - i <= max)
                     {
-                        std::cout << "Player x winsUp\n";
-                    }
-                    else if (row - 2 < min) //accounts for center origin
-                    {
-                        if (row + 1 <= max and A2DArray[row + 1][column] == 'x')
+                        if (A2DArray[row][column - i] == 'x')
                         {
-                            std::cout << "Player x winsUp2\n";
+                            if (i == combination - 1)
+                            {
+                                std::cout << "Player x WinsHorizontal!" << std::endl;
+                            }
+
+                        }
+                        else
+                        {
+                            break;
                         }
                     }
                 }
 
-                //down
-                if (row + 1 <= max and A2DArray[row + 1][column] == 'x')
-                {
-                    if (row + 2 <= max and A2DArray[row + 2][column] == 'x')
-                    {
-                        std::cout << "Player x winsDown\n";
-                    }
-                    else if (row + 2 > max) //accounts for center origin
-                    {
-                        if (row - 1 >= min and A2DArray[row - 1][column] == 'x')
-                        {
-                            std::cout << "Player x winsDown2\n";
-                        }
-                    }
-                }
-
-                //left
-                if (column - 1 >= min and A2DArray[row][column - 1] == 'x')
-                {
-                    if (column - 2 >= min and A2DArray[row][column - 2] == 'x')
-                    {
-                        std::cout << "Player x winsLeft\n";
-                    }
-                    else if (column - 2 < min) //accounts for center origin
-                    {
-                        if (column + 1 <= max and A2DArray[row][column + 1] == 'x')
-                        {
-                            std::cout << "Player x winsLeft2\n";
-                        }
-                    }
-                }
-                //right
-                if (column + 1 <= max and A2DArray[row][column + 1] == 'x')
-                {
-                    if (column + 2 <= max and A2DArray[row][column + 2] == 'x')
-                    {
-                        std::cout << "Player x winsRight\n";
-                    }
-                    else if (column + 2 > max) //accounts for center origin
-                    {
-                        if (column - 1 >= min and A2DArray[row][column - 1] == 'x')
-                        {
-                            std::cout << "Player x winsRight2\n";
-                        }
-                    }
-                }
                 //top right 
                 if (column + 1 <= max and row - 1 >= min and A2DArray[row - 1][column + 1] == 'x')
                 {
@@ -342,21 +297,21 @@ void CheckWin(const std::vector<std::vector<char>> &A2DArray)
     }
 }
 
-void CheckPath(std::string direction, int gridsize, int combination)
-{
-    for (int i = 1; i <= combination; i++)
-    {
-        if (row - i >= min && row - i <= max)
-        {
-            if (A2DArray[row - i][column] == 'x')
-            {
-                if (i == combination - 1)
-                {
-                    std::cout << "Player x wins!" << std::endl;
-                }
-            }
-        }
-        // Make a functions that intakes direction, min and max, and combo to reduce the size of this.
-        CheckPath("up", max, combination);
-    }
-}
+//void CheckPath(std::string direction, int gridsize, int combination)
+//{
+//    for (int i = 1; i <= combination; i++)
+//    {
+//        if (row - i >= min && row - i <= max)
+//        {
+//            if (A2DArray[row - i][column] == 'x')
+//            {
+//                if (i == combination - 1)
+//                {
+//                    std::cout << "Player x wins!" << std::endl;
+//                }
+//            }
+//        }
+//        // Make a functions that intakes direction, min and max, and combo to reduce the size of this.
+//        CheckPath("up", max, combination);
+//    }
+//}

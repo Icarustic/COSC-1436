@@ -54,15 +54,19 @@ int main()
 
     // Need & both in header and .cpp file to edit the 2D array in the function.
 
-    std::vector <std::vector <char>> Grid = 
-    {
-        {' ','x',' ',' '},
-        {'x','x','x',' '},
-        {' ','x',' ',' '},
-        {' ',' ',' ',' '}
-    };
+    //std::vector <std::vector <char>> Grid = 
+    //{
+    //    {'x',' ',' ',' '},
+    //    {' ','x',' ',' '},
+    //    {' ',' ','x',' '},
+    //    {' ',' ',' ',' '}
+    //};
 
-    //std::vector <std::vector <char>> Grid2(3, std::vector<char> (3, ' ')); 
+    std::cout << "Pick a size for the Grid (To win you need to make a row as long as the grid)";
+    int x = 3;
+    std::cin >> x;
+
+    std::vector <std::vector <char>> Grid (x, std::vector<char> (x, ' ')); 
     //version for char uses '' instead of ""
     //First Value is the number of rows, Second value is the number of columns
     int MoveCOunter = 0;

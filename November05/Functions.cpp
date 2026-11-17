@@ -17,6 +17,9 @@ void Print2DArray(std::vector <std::vector <char>> A2DArray, bool Player)
         VisualPlayer = "Player o";
     }
 
+    int numCols = A2DArray[0].size();
+    std::string divider(numCols * 3.5, '-');
+
     std::cout << "Tic Tac Toe: Pick a space " << VisualPlayer << std::endl;
     for (int row = 0; row < A2DArray.size(); row++) //outerloop
     {
@@ -26,9 +29,10 @@ void Print2DArray(std::vector <std::vector <char>> A2DArray, bool Player)
             std::cout << std::setw(2);
             std::cout << std::left; //left side text align
             std::cout << A2DArray[row][column] << "|";
-        }
 
-        std::cout << std::endl <<  "----------" << std::endl; //new line after each row
+        }
+        std::cout << std::endl;
+        std::cout << divider << std::endl; // Dynamic divider after each row
     }
 
 }
@@ -141,7 +145,7 @@ void CheckWin(const std::vector<std::vector<char>> &A2DArray)
                         {
                             if (i == combination - 1)
                             {
-                                std::cout << "Player x WinsHorizontal!" << std::endl;
+                                std::cout << "Player x WinsUpwardHorizontal!" << std::endl;
                             }
 
                         }
@@ -152,42 +156,45 @@ void CheckWin(const std::vector<std::vector<char>> &A2DArray)
                     }
                 }
 
-                //top right 
-                if (column + 1 <= max and row - 1 >= min and A2DArray[row - 1][column + 1] == 'x')
+                //top right and bottom left
+                for (int i = 1; i <= combination; i++)
                 {
-                    if (column + 2 <= max and row - 2 >= min and A2DArray[row - 2][column + 2] == 'x')
+                    if (column + i >= min && column + i <= max and row - i >= min && row - i <= max)
                     {
-                        std::cout << "Player x winsTopRight\n";
-                    }
-                    else if (column + 2 > max and row - 2 < min) //accounts for center origin
-                    {
-                        if (column - 1 >= min and row + 1 <= max and A2DArray[row + 1][column - 1] == 'x')
+                        if (A2DArray[row - i][column + i] == 'x')
                         {
-                            std::cout << "Player x winsTopRight2\n";
+                            if (i == combination - 1)
+                            {
+                                std::cout << "Player x WinsDownwardHorizontal!" << std::endl;
+                            }
+
+                        }
+                        else
+                        {
+                            break;
                         }
                     }
                 }
-                //top left 
-                if (column - 1 >= min and row - 1 >= min and A2DArray[row - 1][column - 1] == 'x')
+
+                //top left and bottom right
+                for (int i = 1; i <= combination; i++)
                 {
-                    if (column - 2 >= min and row - 2 >= min and A2DArray[row - 2][column - 2] == 'x')
+                    if (column - i >= min && column - i <= max and row - i >= min && row - i <= max)
                     {
-                        std::cout << "Player x winsTopLeft\n";
-                    }
-                    else if (column - 2 < min and row - 2 < min) //accounts for center origin
-                    {
-                        if (column + 1 <= max and row + 1 <= max and A2DArray[row + 1][column + 1] == 'x')
+                        if (A2DArray[row - i][column - i] == 'x')
                         {
-                            std::cout << "Player x winsTopLeft2\n";
+                            if (i == combination - 1)
+                            {
+                                std::cout << "Player x WinsHorizontal!" << std::endl;
+                            }
+
+                        }
+                        else
+                        {
+                            break;
                         }
                     }
                 }
-                //bottom right (Accounted for by top left)
-
-                //bottom left (Accounted for by top right)
-
-
-
             }
 
 
